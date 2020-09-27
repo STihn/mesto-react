@@ -1,0 +1,22 @@
+.pop-up__form {
+    max-width: 22.37rem;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 560px) {
+    .pop-up__form {
+       max-width: 18rem;
+    }
+}
+
+@media screen and (max-width: 495px) {
+    .pop-up__form {
+       max-width: 14rem;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    .pop-up__form {
+       max-width: 12.5rem;
+    }
+}

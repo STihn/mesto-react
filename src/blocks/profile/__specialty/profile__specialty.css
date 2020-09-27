@@ -1,0 +1,25 @@
+.profile__specialty {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.12rem;
+    line-height: 22px;
+    color: #FFFFFF;
+    max-width: 19.87rem;
+    margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 673px) {
+    .profile__specialty {
+        text-align: center;
+    }
+ }
+
+@media screen and (max-width: 478px) {
+    .profile__specialty {
+        font-size: .87rem;
+        max-width: 17.5rem;
+    }
+}

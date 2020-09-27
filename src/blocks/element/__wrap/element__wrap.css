@@ -1,0 +1,6 @@
+.element__wrap {
+    margin: 0 .93rem 1.62rem 1.31rem;
+    display: flex;
+    justify-content: space-between;
+    max-width: 15.37rem;
+}

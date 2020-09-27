@@ -1,0 +1,35 @@
+.pop-up__btnSubmit {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.12rem;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+    width: 100%;
+    background: #000000;
+    border-radius: 2px;
+    padding: .87rem 0;
+    border: none;
+    margin: 2.81rem auto 2.26rem;
+    cursor: pointer;
+}
+
+.pop-up__btnSubmit:hover {
+    opacity: .8;
+    transition: opacity ease .3s;
+}
+
+.pop-up__btnSubmit:focus {
+    outline: none;
+}
+
+
+@media screen and (max-width: 410px) {
+    .pop-up__btnSubmit {
+        font-size: .87rem;
+        line-height: 17px;
+        margin-top: 2.25rem;
+        margin-bottom: 1.87rem;
+    }
+}

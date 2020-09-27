@@ -1,0 +1,8 @@
+.element__btnLike_active {
+    cursor: pointer;
+    background: url(../../../../images/like-black.svg) center no-repeat;
+    width: 21px;
+    height: 19px;
+    border: none;
+    align-self: center;
+}

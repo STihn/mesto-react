@@ -1,0 +1,12 @@
+@import url(__copyright/footer__copyright.css);
+
+.footer {
+    display: flex;
+    padding-bottom: 3.75rem;
+}
+
+@media screen and (max-width: 478px) {
+    .footer {
+        padding-bottom: 2.25rem;
+    }
+}

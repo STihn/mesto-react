@@ -1,0 +1,56 @@
+.pop-up__input {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: .87rem;
+    line-height: 17px;
+    color: #000000;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    width: 97%;
+    margin-bottom: 1.25rem;
+    padding: .31rem .31rem .81rem;
+}
+
+.pop-up__input::-webkit-input-placeholder {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #C4C4C4;
+}
+
+.pop-up__input::-moz-placeholder {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #C4C4C4;
+}
+
+.pop-up__input::-ms-input-placeholder {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #C4C4C4;
+}
+
+.pop-up__input::o-placeholder {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #C4C4C4;
+}
+.pop-up__input::placeholder  {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #C4C4C4;
+}
+
+.pop-up__input:last-of-type {
+    margin-bottom: 0;
+}

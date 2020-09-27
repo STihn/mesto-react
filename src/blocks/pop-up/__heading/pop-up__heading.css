@@ -1,0 +1,20 @@
+.pop-up__heading {
+    margin: 2.12rem 0 2.68rem;
+    max-width: 20.62rem;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.5rem;
+    line-height: 29px;
+    color: #000000;
+}
+
+@media screen and (max-width: 410px) {
+    .pop-up__heading {
+       max-width: 11.5rem;
+       font-size: 1.12rem;
+       line-height: 22px;
+       margin-bottom: 2.25rem;
+       margin-top: 1.87rem;
+    }
+}
