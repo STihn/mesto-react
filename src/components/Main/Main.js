@@ -44,12 +44,16 @@ function Main({onClickAvatar, onClickAddPlace, onClickProfile, onClickImage}) {
             <div className="elements wrapper">
                 {
                     cards.map(({name, link, _id}) => (
-                        <Card onClickImg={() => onClickImage({name, link})} name={name} link={link} key={_id}/>
+                        <Card 
+                        onClickImg={() => onClickImage({name, link})} 
+                        name={name} 
+                        link={link} 
+                        key={_id}/>
                     ))
                 }            
             </div>
         </div>
     )
-};
+}
 
 export default Main;
