@@ -1,11 +1,12 @@
 import React from 'react';
+import cn from 'classnames';
 
 
-function ImagePopup (props) {
-    const { name, link, isOpen, onClose } = props;
+function ImagePopup ({ name, link, isOpen, onClose }) {
+    
     
     return(
-        <div className={`pop-up pop-up_img ${isOpen && 'pop-up_opened'}`}>
+        <div className={cn('pop-up', 'pop-up_img', { 'pop-up_opened': isOpen })}>
             <div className="pop-up__wrap">
                 <button type="button" name="closeImage" className="pop-up__btnClose" onClick={onClose}></button>
                 <figure className="pop-up__inner">

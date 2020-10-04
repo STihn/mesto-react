@@ -11,7 +11,6 @@ import api from '../utils/Api.js';
 import '../index.css';
 
 import {CurrentUserContext} from '../contexts/CurrentUserContext.js';
-import {CurrentCardsContext} from '../contexts/CurrentCardsContext.js';
 
 
 function App () {
@@ -68,22 +67,23 @@ function App () {
             setCurrentCards(newCardLists);
         })
     }
+
+    function defineCard(_id, newCard) {
+        const newCardLists = currentCards.map((card) => 
+                    card._id === _id ? newCard : card
+                );
+                setCurrentCards(newCardLists);
+    }
     
     function handleCardLike(_id, likes) {
         const isLiked = likes.some(i => i._id === currentUser._id);
         if(!isLiked) {
             api.likeCard(_id).then((newCard) => {
-                const newCardLists = currentCards.map((card) => 
-                    card._id === _id ? newCard : card
-                );
-                setCurrentCards(newCardLists);
+                defineCard(_id, newCard);
             })
         } else if(isLiked) {
             api.noLikeCard(_id).then((newCard) => {
-                const newCardLists = currentCards.map((card) => 
-                    card._id === _id ? newCard : card
-                );
-                setCurrentCards(newCardLists);
+                defineCard(_id, newCard)
             })
         }
     }
@@ -91,26 +91,26 @@ function App () {
     function handleUpdateUser(data) {
         api.editProfile(data)
           .then((currentUser) => setCurrentUser(currentUser))
-        closeAllPopups();
+          .finally(closeAllPopups());
     }
 
     function handleUpdateAvatar(data) {
         api.editAvatar(data).then((newAvatar) => setCurrentUser(newAvatar))
-        closeAllPopups();
+        .finally(closeAllPopups());
     }
 
     function handleAddPlaceSubmit(data) {
         api.createCard(data).then((newCard) => setCurrentCards([...currentCards,newCard]))
-        closeAllPopups();
+        .finally(closeAllPopups());
     }
 
     
     return (
         <CurrentUserContext.Provider value={currentUser}>
-        <CurrentCardsContext.Provider value={currentCards}>
             <div className="page">
                 <Header />
                 <Main 
+                cards={currentCards}
                 onClickProfile={handleEditProfilePopupOpen} 
                 onClickAddPlace={handleAddPlacePopupOpen} 
                 onClickAvatar={handleEditAvatarPopupOpen} 
@@ -136,7 +136,6 @@ function App () {
                 link={selectedCard.link}
                 />
             </div>
-        </CurrentCardsContext.Provider>
         </CurrentUserContext.Provider>
     )
 }

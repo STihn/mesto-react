@@ -1,15 +1,11 @@
 import React from 'react';
 import Card from '../Card/Card.js';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext.js';
-import { CurrentCardsContext } from '../../contexts/CurrentCardsContext.js';
-import '../../index.css';
 
     
-function Main({onClickAvatar, onClickAddPlace, onClickProfile, onClickImage, onCardDelete, onLike}) {
+function Main({onClickAvatar, onClickAddPlace, onClickProfile, onClickImage, onCardDelete, onLike, cards}) {
 
     const currentUser = React.useContext(CurrentUserContext);
-    const currentCards = React.useContext(CurrentCardsContext);
-
     
     return (
         <div className="content">
@@ -30,7 +26,7 @@ function Main({onClickAvatar, onClickAddPlace, onClickProfile, onClickImage, onC
             </div>
             <div className="elements wrapper">
                 {
-                    currentCards.map(({name, link, _id, owner, likes}) => (
+                    cards.map(({name, link, _id, owner, likes}) => (
                         <Card 
                         onClickImg={() => onClickImage({name, link})} 
                         name={name} 

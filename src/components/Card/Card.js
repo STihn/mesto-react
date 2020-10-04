@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import cn from 'classnames';
 
-        
 function Card({name, link, _id, owner, likes, onClickImg, MyId, onDeleteCard, onLikeCard}) {
     
     const isOwn = owner._id === MyId;
@@ -26,7 +27,7 @@ function Card({name, link, _id, owner, likes, onClickImg, MyId, onDeleteCard, on
             <div className="element__wrap">
                 <p className="element__text">{name}</p>
                 <div className="element__wrapper">
-                    <button type="button" name="btnLike" className={isLiked ?'element__btnLike element__btnLike_active': 'element__btnLike' }
+                    <button type="button" name="btnLike" className={cn('element__btnLike',{'element__btnLike_active' : isLiked})}
                     onClick={()=> handleLikeClick()}
                     >
                     </button>
@@ -36,5 +37,17 @@ function Card({name, link, _id, owner, likes, onClickImg, MyId, onDeleteCard, on
         </article>
     )
 }
+
+Card.propTypes = {
+    name: PropTypes.string,
+    link: PropTypes.string,
+    _id: PropTypes.string,
+    owner: PropTypes.object,
+    likes: PropTypes.array,
+    onClickImg: PropTypes.func,
+    MyId: PropTypes.string,
+    onDeleteCard: PropTypes.func,
+    onLikeCard: PropTypes.func,
+} 
 
 export default Card;
